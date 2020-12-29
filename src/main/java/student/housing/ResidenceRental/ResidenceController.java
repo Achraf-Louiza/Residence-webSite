@@ -17,4 +17,17 @@ public class ResidenceController {
         residenceRepository.save(new Residence("R1", 100, 30, 400, 1000));
         residenceRepository.save(new Residence("R2", 60, 9, 300, 765));
     }
+
+    @GetMapping(value="/residences")
+    public List<Residence> getResidences(){ return residenceRepository.findAll(); }
+
+    @GetMapping(value="/residences/{nomResidence}")
+    public Residence getCar(@PathVariable(value= "nomResidence" ) String nomResidence){
+        for (Residence r : residenceRepository.findAll()){
+            if (r.getNom().equals(nomResidence)) {
+                return r;
+            }
+        }
+        return null;
+    }
 }
