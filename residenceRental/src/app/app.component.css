@@ -1,9 +1,17 @@
+html {
+   background: url("images/extraGreen.png") ;
+   position: fixed;
+   top: 0;
+   left: 0;
+   /* Preserve aspet ratio */
+   min-width: 100%;
+   min-height: 100%;
+}
 .container {
-    height: 100vh;
-    width: 100vw;
-    background: url("./images/natural.webp");
-    background-size: cover;
-    text-align: center;
+  text-align:center
 }
 
+h1 {
+  color: #B0F2B6;
+}
 

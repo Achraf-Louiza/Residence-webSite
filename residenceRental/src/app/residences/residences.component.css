@@ -1,6 +1,10 @@
 body {
 	background: #262a2b;
 }
+
+h2 {
+  color: #B0F2B6;
+}
 .tilesWrap {
 	padding: 0;
 	margin: 50px auto;
