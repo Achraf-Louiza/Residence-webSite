@@ -1,0 +1,9 @@
+.container {
+    height: 100vh;
+    width: 100vw;
+    background: url("./images/natural.webp");
+    background-size: cover;
+    text-align: center;
+}
+
+
