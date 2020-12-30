@@ -1,11 +1,13 @@
 html {
    background: url("images/extraGreen.png") ;
-   position: fixed;
+   position:fixed;
    top: 0;
    left: 0;
    /* Preserve aspet ratio */
-   min-width: 100%;
-   min-height: 100%;
+   width: 100vw;
+   height: 100vh;
+   overflow-y:scroll;
+   overflow-x:hidden;
 }
 
 
@@ -42,3 +44,48 @@ h1 {
   color: white;
 }
 
+header {
+	background: url('http://www.autodatz.com/wp-content/uploads/2017/05/Old-Car-Wallpapers-Hd-36-with-Old-Car-Wallpapers-Hd.jpg');
+	text-align: center;
+	width: 100%;
+	height: auto;
+	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+	overflow: hidden;
+	border-radius: 0 0 85% 85% / 30%;
+}
+header .overlay{
+	width: 100%;
+	height: 100%;
+	padding: 50px;
+	color: #FFF;
+	text-shadow: 1px 1px 1px #333;
+  background-image: linear-gradient( 135deg, #333 10%, #555 100%);
+
+}
+
+header.h1 {
+	font-family: 'Dancing Script', cursive;
+	font-size: 80px;
+	margin-bottom: 30px;
+}
+
+header.h3, header.p {
+	font-family: 'Open Sans', sans-serif;
+	margin-bottom: 30px;
+}
+
+header.button {
+	border: none;
+	outline: none;
+	padding: 10px 20px;
+	border-radius: 50px;
+	color: #333;
+	background: #fff;
+	margin-bottom: 50px;
+	box-shadow: 0 3px 20px 0 #0000003b;
+}
+header.button:hover{
+	cursor: pointer;
+}
