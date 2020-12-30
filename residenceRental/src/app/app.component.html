@@ -3,6 +3,12 @@
 <body>
   <div class="container">
     <h1> {{title}} </h1>
+    <div class="topnav">
+      <a routerLink="./">Home</a>
+      <a routerLink="/residences">Available residences</a>
+      <a routerLink="/contact">Contact</a>
+    </div>
+    <br/>
     <router-outlet></router-outlet>
   </div>
 </body>
