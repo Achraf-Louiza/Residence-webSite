@@ -1,6 +1,18 @@
-<!DOCTYPE html>
 <html>
 <header>
+  <div class="topnav">
+    <a routerLink="./">Home</a>
+    <a routerLink="/residences">Available residences</a>
+    <a routerLink="/contact">Contact</a>
+  </div>
+</header>
+<body>
+  <div class="container">
+    <br/>
+    <router-outlet></router-outlet>
+  </div>
+</body>
+<footer>
   <div class="overlay">
     <h1>Louiza & Azzaz residences</h1>
     <h3>Reasons for Choosing US</h3>
@@ -8,17 +20,6 @@
     <br>
     <button>READ MORE</button>
   </div>
-</header>
-<body>
-  <div class="container">
-    <div class="topnav">
-      <a routerLink="./">Home</a>
-      <a routerLink="/residences">Available residences</a>
-      <a routerLink="/contact">Contact</a>
-    </div>
-    <br/>
-    <router-outlet></router-outlet>
-  </div>
-</body>
+</footer>
 </html>
 
