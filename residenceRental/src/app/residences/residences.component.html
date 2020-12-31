@@ -1,15 +1,19 @@
 <h2>Available residences</h2>
 <ul class="tilesWrap">
   <li *ngFor="let residence of residences">
-    <h2>0{{residence.id}}</h2>
-    <h3>{{residence.nom}}</h3>
-    <br/><br/>
-    <p>
-      <b>nombre de studios:</b> {{residence.n_studios}}<br/>
-      <b>nombre de studios libres:</b> {{residence.n_libres}}<br/>
-      <b>prix minimal:</b> {{residence.minPrix}} €<br/>
-      <b>prix maximal:</b> {{residence.maxPrix}} €
-    </p>
-    <button>Read more</button>
+      <img [src]="'../../assets/images/res'+ residence.id+'.jpg'" />
+
+        <h2>0{{residence.id}}</h2>
+        <h3>{{residence.nom}}</h3>
+        <br/><br/>
+       <p>
+          <b>nombre de studios:</b> {{residence.n_studios}}<br/>
+          <b>nombre de studios libres:</b> {{residence.n_libres}}<br/>
+          <b>prix minimal:</b> {{residence.minPrix}} €<br/>
+          <b>prix maximal:</b> {{residence.maxPrix}} €
+       </p>
+        <button>Read more</button>
+
   </li>
 </ul>
+
