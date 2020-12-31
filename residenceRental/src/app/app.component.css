@@ -37,6 +37,12 @@ h1 {
   text-decoration: none;
   font-size: 17px;
 }
+#img {
+  padding:3px 0 0 0;
+}
+.topnav a img{
+  height:44px;
+ }
 
 /* Change the color of links on hover */
 .topnav a:hover {
@@ -54,13 +60,14 @@ footer {
 
 	text-align: center;
 	width: 100%;
-	height: auto;
+	height: 25%%;
 	background-size: cover;
 	background-attachment: fixed;
 	overflow: hidden;
   position: relative;
+
 }
-footer .overlay{
+.overlay{
 	width: 100%;
 	height: 100%;
 	padding:10px;
@@ -68,6 +75,13 @@ footer .overlay{
 	text-shadow: 1px 1px 1px #333;
   background-image: linear-gradient( 95deg, #333 10%, #555 100%);
 
+}
+
+.info {
+  position:relative;
+  float:right;
+  inline:block;
+  width:85%;
 }
 
 footer.h1 {
@@ -81,7 +95,7 @@ footer.h3, footer.p {
 	margin-bottom: 30px;
 }
 
-footer.button {
+footerbutton {
 	border: none;
 	outline: none;
 	padding: 10px 20px;
@@ -91,6 +105,7 @@ footer.button {
 	margin-bottom: 50px;
 	box-shadow: 0 3px 20px 0 #0000003b;
 }
+
 footer.button:hover{
 	cursor: pointer;
 }
