@@ -6,12 +6,14 @@ import { ResidencesComponent } from './residences/residences.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ContactComponent } from './contact/contact.component';
+import { ResidenceDetailComponent } from './residence-detail/residence-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ResidencesComponent,
-    ContactComponent
+    ContactComponent,
+    ResidenceDetailComponent
   ],
   imports: [
     BrowserModule,

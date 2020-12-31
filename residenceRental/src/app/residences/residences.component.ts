@@ -9,6 +9,8 @@ import { ResidenceService } from '../residence.service';
 })
 export class ResidencesComponent implements OnInit {
     residences: Residence[];
+    selectedResidence: Residence;
+
     constructor(private residenceService: ResidenceService) { }
 
     ngOnInit(): void {
@@ -16,6 +18,9 @@ export class ResidencesComponent implements OnInit {
     }
     getResidences(): void {
         this.residenceService.getResidencesWithObservable().subscribe(residences => this.residences = residences);
+    }
+    onSelect(residence: Residence){
+      this.selectedResidence = residence;
     }
 
 }

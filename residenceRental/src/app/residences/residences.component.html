@@ -1,6 +1,8 @@
+<div *ngIf="!selectedResidence">
 <h2>Available residences</h2>
 <ul class="tilesWrap">
-  <li *ngFor="let residence of residences">
+  <li *ngFor="let residence of residences"
+      (click)="onSelect(residence)">
       <img [src]="'../../assets/images/res'+ residence.id+'.jpg'" />
 
         <h2>0{{residence.id}}</h2>
@@ -12,8 +14,9 @@
           <b>prix minimal:</b> {{residence.minPrix}} €<br/>
           <b>prix maximal:</b> {{residence.maxPrix}} €
        </p>
-        <button>Read more</button>
 
   </li>
 </ul>
+</div>
+<app-residence-detail [residence]="selectedResidence"></app-residence-detail>
 
