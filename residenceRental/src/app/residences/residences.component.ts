@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Residence } from '../residence';
 import { ResidenceService } from '../residence.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-residences',
@@ -11,10 +12,12 @@ export class ResidencesComponent implements OnInit {
     residences: Residence[];
     selectedResidence: Residence;
 
+
     constructor(private residenceService: ResidenceService) { }
 
     ngOnInit(): void {
       this.getResidences();
+      this.selectedResidence=null;
     }
     getResidences(): void {
         this.residenceService.getResidencesWithObservable().subscribe(residences => this.residences = residences);
