@@ -11,16 +11,18 @@ public class Residence {
     private int n_libres;
     private double minPrix;
     private double maxPrix;
+    private String adresse;
     private List<Studio> studios;
 
     public Residence() { super(); }
 
-    public Residence(String nom, int n_studios, int n_libres, float minPrix, float maxPrix) {
+    public Residence(String nom, int n_studios, int n_libres, float minPrix, float maxPrix, String adresse) {
         this.nom = nom;
         this.n_studios = n_studios;
         this.n_libres = n_libres;
         this.minPrix = minPrix;
         this.maxPrix = maxPrix;
+        this.adresse=adresse;
     }
 
     @Id
@@ -52,6 +54,14 @@ public class Residence {
 
     public double getMaxPrix() {
         return maxPrix;
+    }
+
+    public String getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
     }
 
     public void setId(Long id) { this.id = id; }
