@@ -1,9 +1,7 @@
 package student.housing.ResidenceRental;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Residence {
@@ -13,6 +11,7 @@ public class Residence {
     private int n_libres;
     private double minPrix;
     private double maxPrix;
+    private List<Studio> studios;
 
     public Residence() { super(); }
 
@@ -28,6 +27,11 @@ public class Residence {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long getId() {
         return id;
+    }
+
+    @OneToMany(mappedBy="residence")
+    public List<Studio> getStudios() {
+        return studios;
     }
 
     public String getNom() {
@@ -70,6 +74,10 @@ public class Residence {
 
     public void setMaxPrix(double maxPrix) {
         this.maxPrix = maxPrix;
+    }
+
+    public void setStudios(List<Studio> studios) {
+        this.studios = studios;
     }
 
     @Override

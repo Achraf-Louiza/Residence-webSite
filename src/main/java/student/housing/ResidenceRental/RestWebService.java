@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class ResidenceController {
+public class RestWebService {
     ResidenceRepository residenceRepository;
 
     @Autowired
-    public ResidenceController(ResidenceRepository residenceRepository){
+    public RestWebService(ResidenceRepository residenceRepository){
         this.residenceRepository = residenceRepository;
         residenceRepository.save(new Residence("MIS pour jeunes actifs", 100, 30, 400, 1000));
         residenceRepository.save(new Residence("August Rodin", 60, 9, 300, 765));
@@ -28,7 +28,7 @@ public class ResidenceController {
 
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping(value="/residences/{nomResidence}")
-    public Residence getCar(@PathVariable(value= "nomResidence" ) String nomResidence){
+    public Residence getResidence(@PathVariable(value= "nomResidence" ) String nomResidence){
         for (Residence r : residenceRepository.findAll()){
             if (r.getNom().equals(nomResidence)) {
                 return r;
