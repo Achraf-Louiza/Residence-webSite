@@ -8,17 +8,17 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 
 export class AppComponent {
-   private _router: Router;
 
-   constructor(private _router:Router) { }
+
+   constructor(private router:Router) { }
    public ngOnInit(): void {
-      this._router.routeReuseStrategy.shouldReuseRoute = function(){
+      this.router.routeReuseStrategy.shouldReuseRoute = function(){
           return false;
       };
 
-      this._router.events.subscribe((evt) => {
+      this.router.events.subscribe((evt) => {
           if (evt instanceof NavigationEnd) {
-              this._router.navigated = false;
+              this.router.navigated = false;
               window.scrollTo(0, 0);
           }
       });
