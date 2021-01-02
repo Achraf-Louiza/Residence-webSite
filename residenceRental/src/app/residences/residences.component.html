@@ -9,12 +9,26 @@
         <h3>{{residence.nom}}</h3>
         <i>{{residence.adresse}}</i>
         <br/><br/>
-       <p>
-          <b>nombre de studios:</b> {{residence.n_studios}}<br/>
-          <b>nombre de studios libres:</b> {{residence.n_libres}}<br/>
-          <b>prix minimal:</b> {{residence.minPrix}} €<br/>
-          <b>prix maximal:</b> {{residence.maxPrix}} €
-       </p>
+       <table>
+          <tr>
+            <td><b>nombre de studios:</b></td>
+            <td>{{residence.n_studios}}</td>
+          </tr>
+         <tr>
+           <td><b>nombre de studios libres:</b></td>
+           <td>{{residence.n_libres}}</td>
+         </tr>
+         <tr>
+           <td><b>prix minimal:</b> </td>
+           <td>{{residence.minPrix}} €</td>
+         </tr>
+         <tr>
+           <td>
+           <b>prix maximal:</b>
+           </td>
+           <td>{{residence.maxPrix}} €</td>
+         </tr>
+       </table>
 
   </li>
 </ul>

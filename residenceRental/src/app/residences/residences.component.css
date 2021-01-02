@@ -2,6 +2,13 @@ body {
 	background: #262a2b;
 }
 
+table, th, td {
+  border: 1px solid black;
+  color: white;
+  border-collapse: collapse;
+  border-color: #B0F2B6
+}
+
 i {
 color: #B0F2B6;
 }
