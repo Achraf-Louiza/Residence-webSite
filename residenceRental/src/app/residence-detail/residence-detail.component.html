@@ -1,4 +1,6 @@
 <div class="detail" *ngIf="residence">
+
+  <img [src]="'../../assets/images/res'+ residence.id+'.jpg'" />
   <h1>{{residence.nom}}</h1>
   <i>{{residence.adresse}}</i>
   <p>
@@ -7,24 +9,24 @@
     et sécurité dans un cadre, unique, agréable et qualitatif.
   </p>
 
-  <table>
-    <tr>
-      <td><b>nombre de studios:</b></td>
-      <td>{{residence.n_studios}}</td>
-    </tr>
-    <tr>
-      <td><b>nombre de studios libres:</b></td>
-      <td>{{residence.n_libres}}</td>
-    </tr>
-    <tr>
-      <td><b>prix minimal:</b> </td>
-      <td>{{residence.minPrix}} €</td>
-    </tr>
-    <tr>
-      <td>
-        <b>prix maximal:</b>
-      </td>
-      <td>{{residence.maxPrix}} €</td>
-    </tr>
-  </table>
+<table>
+  <tr>
+    <td><b>nombre de studios:</b></td>
+    <td>{{residence.n_studios}}</td>
+  </tr>
+  <tr>
+    <td><b>nombre de studios libres:</b></td>
+    <td>{{residence.n_libres}}</td>
+  </tr>
+  <tr>
+    <td><b>prix minimal:</b> </td>
+    <td>{{residence.minPrix}} €</td>
+  </tr>
+  <tr>
+    <td>
+      <b>prix maximal:</b>
+    </td>
+    <td>{{residence.maxPrix}} €</td>
+  </tr>
+</table>
 </div>

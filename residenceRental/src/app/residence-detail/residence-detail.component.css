@@ -2,7 +2,27 @@
   padding:15px;
 }
 div{
-color:white;}
+
+  padding: 80px 20px 40px 20px;
+	position: relative;
+	vertical-align: top;
+	margin: 10px;
+	font-family: 'helvetica', san-serif;
+	width:60%;
+	min-height: 25%;
+	background: #262a2b;
+	border: 1px solid #252727;
+	margin-top:40px;
+	display: inline-block;
+  color:white;
+  }
+
+div img{
+   display: inline-block;
+   width: 50%;
+   height: 60%;
+   float: right;
+}
 
 table, th, td {
   border: 1px solid black;
