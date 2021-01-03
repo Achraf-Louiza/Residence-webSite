@@ -6,4 +6,5 @@ export class Residence{
   minPrix: number;
   maxPrix: number;
   adresse: string;
+  description:string
 }

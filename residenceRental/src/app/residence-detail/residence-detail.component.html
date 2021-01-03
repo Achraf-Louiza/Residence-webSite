@@ -1,8 +1,30 @@
 <div class="detail" *ngIf="residence">
+  <h1>{{residence.nom}}</h1>
+  <i>{{residence.adresse}}</i>
   <p>
-  <b>nombre de studios:</b> {{residence.n_studios}}<br/>
-  <b>nombre de studios libres:</b> {{residence.n_libres}}<br/>
-  <b>prix minimal:</b> {{residence.minPrix}} €<br/>
-  <b>prix maximal:</b> {{residence.maxPrix}} €
-</p>
+    Proche de Tolbiac et non loin de Jussieu ainsi que des autres grands campus universitaires,<br/>
+    la résidence services 13eme rive gauche Tolbiac a été pensée pour offrir aux étudiants confort de vie<br/>
+    et sécurité dans un cadre, unique, agréable et qualitatif.
+  </p>
+
+  <table>
+    <tr>
+      <td><b>nombre de studios:</b></td>
+      <td>{{residence.n_studios}}</td>
+    </tr>
+    <tr>
+      <td><b>nombre de studios libres:</b></td>
+      <td>{{residence.n_libres}}</td>
+    </tr>
+    <tr>
+      <td><b>prix minimal:</b> </td>
+      <td>{{residence.minPrix}} €</td>
+    </tr>
+    <tr>
+      <td>
+        <b>prix maximal:</b>
+      </td>
+      <td>{{residence.maxPrix}} €</td>
+    </tr>
+  </table>
 </div>
