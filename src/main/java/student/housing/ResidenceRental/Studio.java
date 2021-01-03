@@ -9,21 +9,20 @@ public class Studio {
     private double superficie;
     private double prixmois;
     private double prixcaution;
-    private Long n_occurence;
-    private Long n_libres;
-    private String description;
+    private int n_occurence;
+    private int n_libres;
     private Residence residence;
     private List<Reservation> reservations;
 
     public Studio(){ super();}
 
-    public Studio(Long resid, double superficie, double prixmois, double prixcaution, Long n_occurence, Long n_libres, String description) {
+    public Studio(double superficie, double prixmois, double prixcaution, int n_occurence, int n_libres) {
         this.superficie = superficie;
         this.prixmois = prixmois;
         this.prixcaution = prixcaution;
         this.n_occurence = n_occurence;
         this.n_libres = n_libres;
-        this.description = description;
+
     }
 
     @Id
@@ -78,29 +77,22 @@ public class Studio {
         this.prixcaution = prixcaution;
     }
 
-    public Long getN_occurence() {
+    public int getN_occurence() {
         return n_occurence;
     }
 
-    public void setN_occurence(Long n_occurence) {
+    public void setN_occurence(int n_occurence) {
         this.n_occurence = n_occurence;
     }
 
-    public Long getN_libres() {
+    public int getN_libres() {
         return n_libres;
     }
 
-    public void setN_libres(Long n_libres) {
+    public void setN_libres(int n_libres) {
         this.n_libres = n_libres;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 
     @Override
     public String toString() {
@@ -111,7 +103,6 @@ public class Studio {
                 ", prixcaution=" + prixcaution +
                 ", n_occurence=" + n_occurence +
                 ", n_libres=" + n_libres +
-                ", description='" + description + '\'' +
                 '}';
     }
 }

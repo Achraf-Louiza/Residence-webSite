@@ -12,11 +12,12 @@ public class Residence {
     private double minPrix;
     private double maxPrix;
     private String adresse;
+    private String description;
     private List<Studio> studios;
 
     public Residence() { super(); }
 
-    public Residence(String nom, int n_studios, int n_libres, float minPrix, float maxPrix, String adresse) {
+    public Residence(String nom, int n_studios, int n_libres, float minPrix, float maxPrix, String adresse, String description) {
         this.nom = nom;
         this.n_studios = n_studios;
         this.n_libres = n_libres;
@@ -88,6 +89,14 @@ public class Residence {
 
     public void setStudios(List<Studio> studios) {
         this.studios = studios;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override
