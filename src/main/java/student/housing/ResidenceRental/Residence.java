@@ -24,6 +24,7 @@ public class Residence {
         this.minPrix = minPrix;
         this.maxPrix = maxPrix;
         this.adresse=adresse;
+        this.description=description;
     }
 
     @Id

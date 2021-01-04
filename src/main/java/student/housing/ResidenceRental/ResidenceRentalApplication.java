@@ -18,7 +18,7 @@ public class ResidenceRentalApplication {
 			Residence res1 = new Residence("MIS pour jeunes actifs", 100, 30,
 					400, 1000,
 					"2-16, rue Theroigne de Mericourt - 75013 Paris",
-					"\"La Maison Internationale de Séjour pour jeunes actifs a pour vocation d'héberger temporairement  un public jeune de 16 à 35 ans en insertion professionnelle (CDD, CDI, Stagiaires, Apprentissage, etc.)"
+					"La Maison Internationale de Séjour pour jeunes actifs a pour vocation d'héberger temporairement un public jeune de 16 à 35 ans en insertion professionnelle (CDD, CDI, Stagiaires, Apprentissage, etc.)"
 			);
 			Residence res2 = new Residence("August Rodin", 60, 9,
 					300, 765,
