@@ -4,7 +4,7 @@ body {
 
 table, th, td {
   border: 1px solid black;
-  color: white;
+  color: #b7b7b7;
   border-collapse: collapse;
   border-color: #B0F2B6
 }
@@ -25,7 +25,7 @@ h2 {
 	display: inline-block;
 	width: 45%;
 
-	padding: 80px 20px 40px;
+	padding: 40px 20px 40px;
 	position: relative;
 	vertical-align: top;
 	margin: 10px;
