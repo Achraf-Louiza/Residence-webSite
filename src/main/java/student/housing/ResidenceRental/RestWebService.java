@@ -11,12 +11,12 @@ import java.util.List;
 @RestController
 public class RestWebService {
     ResidenceRepository residenceRepository;
-    StudioRepository studioRepository;
+
 
     @Autowired
-    public RestWebService(ResidenceRepository rR, StudioRepository sR){
+    public RestWebService(ResidenceRepository rR){
         this.residenceRepository = rR;
-        this.studioRepository = sR;
+
     }
 
     @CrossOrigin(origins = "http://localhost:4200")

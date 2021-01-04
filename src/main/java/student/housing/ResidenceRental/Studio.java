@@ -1,22 +1,25 @@
 package student.housing.ResidenceRental;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class Studio {
     private Long id;
+    private String type;
     private double superficie;
     private double prixmois;
     private double prixcaution;
     private int n_occurence;
     private int n_libres;
     private Residence residence;
-    private List<Reservation> reservations;
+    private List<Reservation> reservations = new ArrayList<>();
 
     public Studio(){ super();}
 
-    public Studio(double superficie, double prixmois, double prixcaution, int n_occurence, int n_libres) {
+    public Studio(String type, double superficie, double prixmois, double prixcaution, int n_occurence, int n_libres) {
+        this.type= type;
         this.superficie = superficie;
         this.prixmois = prixmois;
         this.prixcaution = prixcaution;
@@ -93,6 +96,13 @@ public class Studio {
         this.n_libres = n_libres;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     @Override
     public String toString() {

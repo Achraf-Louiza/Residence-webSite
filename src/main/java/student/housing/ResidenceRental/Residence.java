@@ -1,6 +1,9 @@
 package student.housing.ResidenceRental;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -13,7 +16,7 @@ public class Residence {
     private double maxPrix;
     private String adresse;
     private String description;
-    private List<Studio> studios;
+    private List<Studio> studios = new ArrayList<>();;
 
     public Residence() { super(); }
 
@@ -33,7 +36,8 @@ public class Residence {
         return id;
     }
 
-    @OneToMany(mappedBy="residence")
+    @OneToMany(mappedBy="residence",cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
     public List<Studio> getStudios() {
         return studios;
     }

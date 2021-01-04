@@ -41,7 +41,45 @@ public class ResidenceRentalApplication {
 					"Proche de Tolbiac et non loin de Jussieu ainsi que des autres grands campus universitaires, la résidence services 13eme rive gauche Tolbiac a été pensée pour offrir aux étudiants confort de vie et sécurité dans un cadre, unique, agréable et qualitatif."
 			);
 
-			Studio std1 = new Studio(18, 450, 400, 20, 5);
+			Studio std1 = new Studio("T1", 18, 450, 400, 20, 5);
+			Studio std2 = new Studio("T2", 25, 600, 550, 9, 7);
+
+			res1.getStudios().add(std1);
+			res1.getStudios().add(std2);
+			std1.setResidence(res1);
+			std2.setResidence(res1);
+
+			Studio std3 = new Studio("T1", 17, 350, 350, 50, 0);
+			Studio std4 = new Studio("T2", 22, 500, 450, 12, 3);
+
+			res2.getStudios().add(std3);
+			res2.getStudios().add(std4);
+			std3.setResidence(res2);
+			std4.setResidence(res2);
+
+			Studio std5 = new Studio("T1", 18, 450, 400, 20, 5);
+			Studio std6 = new Studio("T2", 26, 650, 600, 17, 10);
+
+			res3.getStudios().add(std5);
+			res3.getStudios().add(std6);
+			std5.setResidence(res3);
+			std6.setResidence(res3);
+
+			Studio std7 = new Studio("T1", 20, 500, 500, 30, 7);
+			Studio std8 = new Studio("T2", 30, 850, 800, 5, 5);
+
+			res4.getStudios().add(std7);
+			res4.getStudios().add(std8);
+			std7.setResidence(res4);
+			std8.setResidence(res4);
+
+			Studio std9 = new Studio("T1", 15, 300, 300, 60, 11);
+			Studio std10 = new Studio("T2", 33, 950, 900, 8, 2);
+
+			res5.getStudios().add(std9);
+			res5.getStudios().add(std10);
+			std9.setResidence(res5);
+			std10.setResidence(res5);
 
 			residenceRepository.save(res1);
 			residenceRepository.save(res2);
