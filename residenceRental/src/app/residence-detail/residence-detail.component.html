@@ -1,4 +1,4 @@
-<div class="detail">
+<div class="detail" *ngIf="!toReserve">
 
   <img [src]="'../../assets/images/res'+ residence.id+'.jpg'" />
   <h1>{{residence.nom}}</h1>
@@ -28,7 +28,7 @@
   </tr>
 </table>
 </div>
-<div class="res"*ngIf="residence">
+<div class="res"*ngIf="residence && !toReserve">
   <table>
     <tr>
       <th>type</th>
@@ -46,7 +46,61 @@
       <td>{{std.prixcaution}}</td>
       <td>{{std.n_occurence}}</td>
       <td>{{std.n_libres}}</td>
-      <td><button>Cliquer pour réserver</button></td>
+      <td><button (click) = "onClick()">Cliquer pour réserver</button></td>
     </tr>
   </table>
+</div>
+<div class="form" *ngIf="toReserve">
+    <h1 class="h1">A remplir pour réserver</h1>
+    <form #userForm ="ngForm"  *ngIf="!submitted" (ngSubmit)="onSubmit()" novalidate>
+      <div class="row">
+        <div class="col">
+          <label>Nom</label>
+          <input type="text" required #Nom="ngModel" [class.is-invalid]="Nom.invalid"  class="form-control && Nom.touched"  name="Nom" [(ngModel)]="userModel.Nom" placeholder="Nom" >
+        </div>
+        <div class="col">
+          <label>Prenom</label>
+          <input type="text" required #Prenom="ngModel" [class.is-invalid]="Prenom.invalid"  class="form-control && Prenom.touched" name="Prenom" [(ngModel)]="userModel.Prenom" placeholder="Prenom"  >
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Telephone</label>
+        <input type="tel" #Tel="ngModel" pattern="^\d{10}$" required [class.is-invalid]="Tel.invalid"  class="form-control && Tel.touched" class="form-control" name="Tel" [(ngModel)]="userModel.Tel" placeholder="Telephone" >
+        <div *ngIf="Tel.errors && (Tel.valid || Tel.untouched)">
+        </div>
+
+
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Addresse Email</label>
+        <input type="email" class="form-control" name="Email" [(ngModel)]="userModel.Email"  id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" >
+      </div>
+      <div ngModelGroup ="UserAdresse" >
+        <div class="form-group">
+          <label for="inputAddress">Addresse</label>
+          <input type="text" class="form-control" name="Adresse" [(ngModel)]="userModel.UserAdresse" id="inputAddress" placeholder="1234 Main St" ngModel>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress2">Complement Addresse</label>
+          <input type="text" class="form-control"   name="Adresse" [(ngModel)]="userModel.UserAdresse" id="inputAddress2" placeholder="Apartment, studio, or floor" >
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">Departement</label>
+            <input type="text" class="form-control" name="Departement" [(ngModel)]="userModel.UserAdresse"  id="inputCity" >
+          </div>
+
+          <div class="form-group col-md-2">
+            <label for="inputZip">Code Postal</label>
+            <input type="text" class="form-control"  name="Code Postal" [(ngModel)]="userModel.UserAdresse" id="inputZip" >
+          </div>
+        </div>
+      </div>
+
+      <button [disabled]= "userForm.form.invalid" type="submit" class="submit-btn">Soummettre</button>
+
+    </form>
+
+
+
 </div>
