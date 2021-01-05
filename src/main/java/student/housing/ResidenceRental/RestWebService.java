@@ -1,10 +1,7 @@
 package student.housing.ResidenceRental;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,4 +30,16 @@ public class RestWebService {
         }
         return null;
     }
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping(value="/studios")
+    public List<Studio> getStudios(@RequestParam String nomResidence){
+        for (Residence r : residenceRepository.findAll()){
+            if (r.getNom().equals(nomResidence)) {
+                return r.getStudios();
+            }
+        }
+        return null;
+    }
+
+
 }

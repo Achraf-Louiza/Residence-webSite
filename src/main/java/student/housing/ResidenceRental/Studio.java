@@ -47,7 +47,7 @@ public class Studio {
         this.residence = residence;
     }
 
-    @OneToMany(mappedBy="studio")
+    @OneToMany(mappedBy="studio", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
     public List<Reservation> getReservations() {
         return reservations;
     }

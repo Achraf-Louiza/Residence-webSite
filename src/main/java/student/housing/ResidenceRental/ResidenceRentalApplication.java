@@ -86,6 +86,7 @@ public class ResidenceRentalApplication {
 			residenceRepository.save(res3);
 			residenceRepository.save(res4);
 			residenceRepository.save(res5);
+
 		};
 	}
 }
