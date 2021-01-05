@@ -1,4 +1,4 @@
-<div class="detail" *ngIf="residence">
+<div class="detail">
 
   <img [src]="'../../assets/images/res'+ residence.id+'.jpg'" />
   <h1>{{residence.nom}}</h1>
@@ -27,4 +27,26 @@
     <td>{{residence.maxPrix}} €</td>
   </tr>
 </table>
+</div>
+<div class="res"*ngIf="residence">
+  <table>
+    <tr>
+      <th>type</th>
+      <th>superficie</th>
+      <th>prix par mois</th>
+      <th>prix de caution</th>
+      <th>nombre de studios</th>
+      <th>studios libres</th>
+      <th>réserver</th>
+    </tr>
+    <tr *ngFor="let std of studios">
+      <td>{{std.type}}</td>
+      <td>{{std.superficie}}</td>
+      <td>{{std.prixmois}}</td>
+      <td>{{std.prixcaution}}</td>
+      <td>{{std.n_occurence}}</td>
+      <td>{{std.n_libres}}</td>
+      <td><button>Cliquer pour réserver</button></td>
+    </tr>
+  </table>
 </div>

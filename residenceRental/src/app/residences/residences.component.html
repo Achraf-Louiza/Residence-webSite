@@ -35,5 +35,8 @@
   </li>
 </ul>
 </div>
-<app-residence-detail [residence]="selectedResidence"></app-residence-detail>
+<div *ngIf = "selectedResidence">
+  <app-residence-detail [residence]="selectedResidence"></app-residence-detail>
+
+</div>
 

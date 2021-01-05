@@ -1,6 +1,4 @@
-.detail {
-  padding:15px;
-}
+
 div{
   padding: 80px 20px 40px 20px;
 	position: relative;
@@ -16,7 +14,7 @@ div{
   color:white;
   }
 
-div img{
+.detail img{
    display: inline-block;
    width: 50%;
    height: 60%;
@@ -32,4 +30,11 @@ table, th, td {
 
 i {
 color: #B0F2B6;
+}
+
+.res {
+padding: 0 0 0 0;
+width:40%;
+margin-top:10px;
+margin-left:12%;
 }
