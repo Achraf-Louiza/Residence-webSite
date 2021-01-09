@@ -25,7 +25,7 @@
   <div class="container" *ngIf="selectedUser && !reservations?.length">
     <h1>Aucune reservations pour {{selectedUser.nom}} {{selectedUser.prenom}}</h1>
   </div>
-  <div class="container" *ngIf="selectedUser && reservations?.lentgh">
+  <div class="container" *ngIf="selectedUser && reservations?.length">
 
     <h1>Reservations de {{selectedUser.nom}} {{selectedUser.prenom}}</h1>
     <table>
