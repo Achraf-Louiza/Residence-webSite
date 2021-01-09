@@ -1,5 +1,8 @@
 package student.housing.ResidenceRental;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Date;
@@ -29,7 +32,7 @@ public class Reservation {
         this.id = id;
     }
 
-    @ManyToOne
+    @ManyToOne(optional=true)
     public Studio getStudio() {
         return studio;
     }
@@ -38,7 +41,7 @@ public class Reservation {
         this.studio = studio;
     }
 
-    @ManyToOne
+    @ManyToOne(optional=true)
     public Client getClient() {
         return client;
     }

@@ -102,7 +102,17 @@ public class RestWebService {
 
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
+    @DeleteMapping(value="/user/{userId}")
+    public void deleteUser(@PathVariable(value= "userId" ) Long userId){
+        userRepository.deleteById(userId);
+    }
 
+    @CrossOrigin(origins = "http://localhost:4200")
+    @DeleteMapping(value="/reservation/{resId}")
+    public void deleteRes(@PathVariable(value= "resId" ) Long resId){
+        reservationRepository.deleteById(resId);
+    }
 
 
 }

@@ -1,6 +1,8 @@
 package student.housing.ResidenceRental;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -8,7 +10,7 @@ import java.util.List;
 
 @Entity
 public class Client {
-    private long id;
+    private Long id;
     private String prenom;
     private String nom;
     private String tel;
@@ -32,7 +34,8 @@ public class Client {
         return id;
     }
 
-    @OneToMany(mappedBy="client", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy="client", cascade=CascadeType.ALL, orphanRemoval = true)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
     public List<Reservation> getReservations() {
         return reservations;
