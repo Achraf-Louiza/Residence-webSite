@@ -10,15 +10,13 @@ public class RestWebService {
 
     ResidenceRepository residenceRepository;
     UserRepository userRepository;
-    ReservationRepository reR;
     Client lastClient;
     Studio chosenStudio;
 
     @Autowired
-    public RestWebService(ResidenceRepository rR, UserRepository uR, ReservationRepository reR){
+    public RestWebService(ResidenceRepository rR, UserRepository uR){
         this.residenceRepository = rR;
         this.userRepository = uR;
-        this.reR = reR;
     }
 
     @CrossOrigin(origins = "http://localhost:4200")
