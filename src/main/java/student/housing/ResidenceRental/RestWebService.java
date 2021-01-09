@@ -33,12 +33,28 @@ public class RestWebService {
         }
         return null;
     }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping(value="/users")
+    public List<Client> getUsers(){ return userRepository.findAll(); }
+
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping(value="/studios")
     public List<Studio> getStudios(@RequestParam String nomResidence){
         for (Residence r : residenceRepository.findAll()){
             if (r.getNom().equals(nomResidence)) {
                 return r.getStudios();
+            }
+        }
+        return null;
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping(value="/reservations")
+    public List<Reservation> getReservations(@RequestParam String nomUser){
+        for (Client c : userRepository.findAll()){
+            if (c.getNom().equals(nomUser)) {
+                return c.getReservations();
             }
         }
         return null;
@@ -67,7 +83,6 @@ public class RestWebService {
         this.lastClient.getReservations().add(reservation);
         this.chosenStudio.getReservations().add(reservation);
         this.userRepository.save(this.lastClient);
-
     }
 
 

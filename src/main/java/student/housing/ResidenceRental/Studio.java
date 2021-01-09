@@ -1,5 +1,7 @@
 package student.housing.ResidenceRental;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -48,6 +50,7 @@ public class Studio {
     }
 
     @OneToMany(mappedBy="studio", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
     public List<Reservation> getReservations() {
         return reservations;
     }

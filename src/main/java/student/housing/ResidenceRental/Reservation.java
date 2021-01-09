@@ -1,19 +1,20 @@
 package student.housing.ResidenceRental;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
 public class Reservation {
     private Long id;
-    private Date dated;
-    private Date datef;
+    private LocalDate dated;
+    private LocalDate datef;
     private Studio studio;
     private Client client;
 
     public Reservation() { super();}
 
-    public Reservation(Date dated, Date datef) {
+    public Reservation(LocalDate dated, LocalDate datef) {
         this.dated = dated;
         this.datef = datef;
     }
@@ -46,19 +47,19 @@ public class Reservation {
         this.client = client;
     }
 
-    public Date getDated() {
+    public LocalDate getDated() {
         return dated;
     }
 
-    public void setDated(Date dated) {
+    public void setDated(LocalDate dated) {
         this.dated = dated;
     }
 
-    public Date getDatef() {
+    public LocalDate getDatef() {
         return datef;
     }
 
-    public void setDatef(Date datef) {
+    public void setDatef(LocalDate datef) {
         this.datef = datef;
     }
 
