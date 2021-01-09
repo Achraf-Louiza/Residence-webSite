@@ -17,7 +17,7 @@
       <td>{{user.tel}}</td>
       <td>{{user.email}}</td>
       <td>{{user.adresse}}</td>
-      <td><button (click) = "onClick(user)">display</button></td>
+      <td><button id="full" (click) = "onClick(user)">display</button></td>
     </tr>
   </table>
 </div>
@@ -41,5 +41,6 @@
         <td>{{res.studio.type}}</td>
       </tr>
     </table>
+    <button id="back" (click)="backToUsers()">back to users</button>
   </div>
 </div>

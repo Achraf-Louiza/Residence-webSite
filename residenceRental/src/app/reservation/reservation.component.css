@@ -36,6 +36,8 @@ color: #B0F2B6;
     width: 80%;
 	}
 
-button{
+#full{
 width:100%;
 }
+#back{
+margin-top:20px;}

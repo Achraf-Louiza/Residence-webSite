@@ -32,4 +32,9 @@ export class ReservationComponent implements OnInit {
   getUsers(): void{
       this.residenceService.getUsersWithObservable().subscribe(users => this.users = users);
     }
+
+  backToUsers():void{
+  this.selectedUser=null;
+  this.reservations=null;
+  }
 }
