@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ContactComponent } from './contact/contact.component';
 import { ResidenceDetailComponent } from './residence-detail/residence-detail.component';
 import { ReservationComponent } from './reservation/reservation.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ReservationComponent } from './reservation/reservation.component';
     ResidencesComponent,
     ContactComponent,
     ResidenceDetailComponent,
-    ReservationComponent
+    ReservationComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

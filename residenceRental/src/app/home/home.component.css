@@ -1,0 +1,31 @@
+.detail {
+
+padding: 80px 20px 40px 20px;
+	position: relative;
+	vertical-align: top;
+
+	font-family: 'helvetica', san-serif;
+	width:80%;
+	max-height: 80%;
+	background: #262a2b;
+	border: 1px solid #252727;
+	margin-top:100px;
+	margin-left:100px;
+	display: inline-block;
+  color:white;
+  }
+
+  .detail img{
+     display: inline-block;
+     width: 50%;
+     min-height: 100%;
+     float: right;
+  }
+
+p{
+margin-top:auto;}
+
+button{
+margin-left:150px;
+.border-radius:50%
+  }
