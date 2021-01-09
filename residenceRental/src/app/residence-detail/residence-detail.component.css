@@ -168,6 +168,8 @@ td p {
   color:red;
   text-align:center;
 }
+button{
+cursor:pointer;}
 .user {
   padding: 0;
 	margin: 30px auto;

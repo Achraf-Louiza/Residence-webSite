@@ -63,3 +63,11 @@ span:hover {
 span:active {
   color: blue;
 }
+
+img{
+width:20px;
+height:20px;
+cursor:pointer;}
+
+button{
+cursor:pointer;}

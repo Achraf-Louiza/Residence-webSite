@@ -18,13 +18,14 @@
       <td>{{user.email}}</td>
       <td>{{user.adresse}}</td>
       <td><button id="full" (click) = "onClick(user)">display</button></td>
+      <td><img src="../assets/images/delete.png" (click)="deleteUser(user.id)"/></td>
     </tr>
   </table>
 </div>
-  <div class="container" *ngIf="selectedUser && !reservations">
+  <div class="container" *ngIf="selectedUser && !reservations?.length">
     <h1>Aucune reservations pour {{selectedUser.nom}} {{selectedUser.prenom}}</h1>
   </div>
-  <div class="container" *ngIf="selectedUser && reservations">
+  <div class="container" *ngIf="selectedUser && reservations?.lentgh">
 
     <h1>Reservations de {{selectedUser.nom}} {{selectedUser.prenom}}</h1>
     <table>
@@ -39,6 +40,7 @@
         <td>{{res.datef}}</td>
         <td>{{res.studio.residence.nom}}</td>
         <td>{{res.studio.type}}</td>
+        <td><img src="../assets/images/delete.png" (click)="deleteRes(res.id)"/></td>
       </tr>
     </table>
     <button id="back" (click)="backToUsers()">back to users</button>

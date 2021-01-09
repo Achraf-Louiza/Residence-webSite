@@ -42,4 +42,17 @@ export class ReservationComponent implements OnInit {
   goToAR():void{
    this.router.navigateByUrl("residences");
   }
+
+  deleteUser(userId):void{
+    this.residenceService.deleteUserWithObservable(userId).subscribe(vv => {console.log(vv);});
+    this.getUsers();
+    this.router.navigateByUrl("reservation");
+  }
+
+  deleteRes(resId):void{
+      this.residenceService.deleteResWithObservable(resId).subscribe(vv => {console.log(vv);});
+      this.router.navigateByUrl("reservation");
+      this.getUsers();
+      this.getReservations();
+    }
 }

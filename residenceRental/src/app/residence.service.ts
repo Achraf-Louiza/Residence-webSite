@@ -44,4 +44,12 @@ export class ResidenceService {
   public postRes(res: Client): Observable<Client>{
         return this.http.post<Client>("http://localhost:8080/reservation", res);
   }
+
+  public deleteUserWithObservable(userId:string): Observable<Client>{
+  return this.http.delete<Client>("http://localhost:8080/user/"+ userId);
+  }
+
+  public deleteResWithObservable(resId:string):Observable<Reservation>{
+    return this.http.delete<Reservation>("http://localhost:8080/reservation/"+resId);
+ }
 }

@@ -16,6 +16,8 @@ export class ResidenceDetailComponent implements OnInit {
   toReserve = false;
   submitted = false;
   selectedStudio: Studio;
+  dateD = new Date("2021-01-01");
+  dateF = new Date("2022-01-01");
 
   constructor(private residenceService: ResidenceService, private router:Router) {
 
