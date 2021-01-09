@@ -10,13 +10,15 @@ public class RestWebService {
 
     ResidenceRepository residenceRepository;
     UserRepository userRepository;
+    ReservationRepository reservationRepository;
     Client lastClient;
     Studio chosenStudio;
 
     @Autowired
-    public RestWebService(ResidenceRepository rR, UserRepository uR){
+    public RestWebService(ResidenceRepository rR, UserRepository uR, ReservationRepository reservationRepository){
         this.residenceRepository = rR;
         this.userRepository = uR;
+        this.reservationRepository=reservationRepository;
     }
 
     @CrossOrigin(origins = "http://localhost:4200")
@@ -77,12 +79,27 @@ public class RestWebService {
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping(value= "/reservation")
     public void addReservation(@RequestBody Reservation reservation) throws Exception{
+        boolean exist = false;
         System.out.println(reservation);
         reservation.setStudio(this.chosenStudio);
-        reservation.setClient(this.lastClient);
-        this.lastClient.getReservations().add(reservation);
         this.chosenStudio.getReservations().add(reservation);
-        this.userRepository.save(this.lastClient);
+        for (Client c : this.userRepository.findAll()) {
+            if (c.getNom().equals(this.lastClient.getNom()) && c.getPrenom().equals(this.lastClient.getPrenom())) {
+                exist = true;
+                this.lastClient=c;
+            }
+        }
+        if (exist==true){
+            reservation.setClient(this.lastClient);
+            this.lastClient.getReservations().add(reservation);
+            this.reservationRepository.save(reservation);
+        }else{
+            reservation.setClient(this.lastClient);
+            this.lastClient.getReservations().add(reservation);
+            this.userRepository.save(this.lastClient);
+            }
+
+
     }
 
 
