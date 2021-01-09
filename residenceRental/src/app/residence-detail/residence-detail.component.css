@@ -164,4 +164,7 @@ size:100%;
         text-align:center;
     }
 }
-
+td p {
+  color:red;
+  text-align:center;
+}

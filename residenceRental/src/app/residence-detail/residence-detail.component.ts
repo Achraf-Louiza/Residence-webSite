@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Residence } from '../residence';
 import { Studio } from '../studio';
-import { User } from '../user' ;
+import { Client } from '../client' ;
 import { ResidenceService } from '../residence.service';
 
 @Component({
@@ -14,6 +14,7 @@ export class ResidenceDetailComponent implements OnInit {
   studios: Studio[];
   toReserve = false;
   submitted = false;
+  selectedStudio: Studio;
 
   constructor(private residenceService: ResidenceService) {
 
@@ -27,8 +28,16 @@ export class ResidenceDetailComponent implements OnInit {
     this.residenceService.getStudiosWithObservable(this.residence?.nom).subscribe(studios => this.studios=studios);
   }
 
-  onClick(): void{
+  onClick(std): void{
+  this.selectedStudio = std;
+  this.residenceService.postStudio(std).subscribe(vv=> {console.log(vv);});
   this.toReserve = true;
+  }
+
+  onSubmit(value: Client): void{
+   this.residenceService.postUser(value).subscribe(vv => {console.log(vv);});
+   this.residenceService.postRes(value).subscribe(vv => {console.log(vv);});
+   this.toReserve = false;
   }
 
 
