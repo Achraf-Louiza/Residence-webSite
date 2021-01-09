@@ -1,26 +1,29 @@
 package student.housing.ResidenceRental;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class Client {
     private long id;
+    private String prenom;
     private String nom;
-    private String statut;
-    private int age;
-    private String numero;
-    private String adressemail;
-    private List<Reservation> resrvations;
+    private String tel;
+    private String email;
+    private String adresse;
+    private List<Reservation> reservations = new ArrayList<Reservation>();
 
     public Client() { super();}
 
-    public Client(String nom, String statut, int age, String numero, String adressemail) {
+    public Client(String prenom, String nom, String tel, String email, String adresse) {
+        this.prenom = prenom;
         this.nom = nom;
-        this.statut = statut;
-        this.age = age;
-        this.numero = numero;
-        this.adressemail = adressemail;
+        this.tel = tel;
+        this.email = email;
+        this.adresse = adresse;
     }
 
     @Id
@@ -29,72 +32,69 @@ public class Client {
         return id;
     }
 
-    @OneToMany(mappedBy="client")
-    public List<Reservation> getResrvations() {
-        return resrvations;
+    @OneToMany(mappedBy="client", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
+    public List<Reservation> getReservations() {
+        return reservations;
     }
 
     public String getNom() {
         return nom;
     }
 
-    public String getStatut() {
-        return statut;
+    public String getPrenom() {
+        return prenom;
     }
 
-    public int getAge() {
-        return age;
+    public String getTel() {
+        return tel;
     }
 
-    public String getNumero() {
-        return numero;
+    public String getEmail() {
+        return email;
     }
 
-    public String getAdressemail() {
-        return adressemail;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+    public String getAdresse() {
+        return adresse;
     }
 
     public void setNom(String nom) {
         this.nom = nom;
     }
 
-    public void setStatut(String statut) {
-        this.statut = statut;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public void setNumero(String numero) {
-        this.numero = numero;
-    }
-
-    public void setAdressemail(String adressemail) {
-        this.adressemail = adressemail;
-    }
-
     public void setId(long id) {
         this.id = id;
     }
 
-    public void setResrvations(List<Reservation> resrvations) {
-        this.resrvations = resrvations;
+    public void setReservations(List<Reservation> resrvations) {
+        this.reservations = resrvations;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
     }
 
     @Override
     public String toString() {
         return "Client{" +
                 "id=" + id +
+                ", prenom='" + prenom + '\'' +
                 ", nom='" + nom + '\'' +
-                ", statut='" + statut + '\'' +
-                ", age=" + age +
-                ", numero='" + numero + '\'' +
-                ", adressemail='" + adressemail + '\'' +
+                ", tel='" + tel + '\'' +
+                ", email='" + email + '\'' +
+                ", adresse='" + adresse + '\'' +
                 '}';
     }
 }
