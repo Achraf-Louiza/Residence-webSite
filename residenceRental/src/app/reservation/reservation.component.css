@@ -1,0 +1,41 @@
+table, th, td {
+  border: 1px solid black;
+  color: white;
+  border-collapse: collapse;
+  border-color: #B0F2B6
+}
+
+h1{
+color: #b7b7b7;
+}
+
+i {
+color: #B0F2B6;
+}
+.user {
+  padding: 0;
+	margin: 30px auto;
+
+}
+
+.container {
+
+
+	  display: inline-block;
+  	width: 45%;
+
+  	padding: 40px 20px 40px;
+  	position: relative;
+  	vertical-align: top;
+  	margin: 10px;
+  	font-family: 'helvetica', san-serif;
+  	min-height: 25%;
+  	background: #262a2b;
+  	border: 1px solid #252727;
+  	text-align: left;
+    width: 80%;
+	}
+
+button{
+width:100%;
+}

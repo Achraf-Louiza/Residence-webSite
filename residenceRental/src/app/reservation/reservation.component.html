@@ -1,0 +1,45 @@
+<div class="user">
+  <div class="container" *ngIf="!selectedUser">
+  <h1>Current users</h1>
+  <h3><i>Choose a user to display his reservations in our residence "THE HOME":</i></h3>
+  <table>
+    <tr>
+      <th>name</th>
+      <th>prénom</th>
+      <th>tel</th>
+      <th>email</th>
+      <th>adresse</th>
+      <th>réservations</th>
+    </tr>
+    <tr *ngFor="let user of users">
+      <td>{{user.nom}}</td>
+      <td>{{user.prenom}}</td>
+      <td>{{user.tel}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.adresse}}</td>
+      <td><button (click) = "onClick(user)">display</button></td>
+    </tr>
+  </table>
+</div>
+  <div class="container" *ngIf="selectedUser && !reservations">
+    <h1>Aucune reservations pour {{selectedUser.nom}} {{selectedUser.prenom}}</h1>
+  </div>
+  <div class="container" *ngIf="selectedUser && reservations">
+
+    <h1>Reservations de {{selectedUser.nom}} {{selectedUser.prenom}}</h1>
+    <table>
+      <tr>
+        <th>date début</th>
+        <th>date fin</th>
+        <th>residence</th>
+        <th>studio</th>
+      </tr>
+      <tr  *ngFor="let res of reservations">
+        <td>{{res.dated}}</td>
+        <td>{{res.datef}}</td>
+        <td>R</td>
+        <td>S</td>
+      </tr>
+    </table>
+  </div>
+</div>

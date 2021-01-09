@@ -7,13 +7,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ContactComponent } from './contact/contact.component';
 import { ResidenceDetailComponent } from './residence-detail/residence-detail.component';
+import { ReservationComponent } from './reservation/reservation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ResidencesComponent,
     ContactComponent,
-    ResidenceDetailComponent
+    ResidenceDetailComponent,
+    ReservationComponent
   ],
   imports: [
     BrowserModule,
