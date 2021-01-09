@@ -37,8 +37,8 @@
       <tr  *ngFor="let res of reservations">
         <td>{{res.dated}}</td>
         <td>{{res.datef}}</td>
-        <td>R</td>
-        <td>S</td>
+        <td>{{res.studio.residence.nom}}</td>
+        <td>{{res.studio.type}}</td>
       </tr>
     </table>
   </div>

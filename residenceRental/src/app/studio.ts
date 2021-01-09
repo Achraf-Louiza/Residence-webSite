@@ -1,3 +1,4 @@
+import { Residence } from './residence';
 export class Studio {
   id: number;
   type: string;
@@ -6,4 +7,5 @@ export class Studio {
   prixcaution: number;
   n_occurence: number;
   n_libres: number;
+  residence: Residence;
 }
