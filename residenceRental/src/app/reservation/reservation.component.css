@@ -42,3 +42,24 @@ width:100%;
 #back{
 margin-top:20px;
 }
+a:link {
+  color: red;
+}
+
+span{
+cursor: pointer;
+}
+/* visited link */
+span:visited {
+  color: green;
+}
+
+/* mouse over link */
+span:hover {
+  color: hotpink;
+}
+
+/* selected link */
+span:active {
+  color: blue;
+}

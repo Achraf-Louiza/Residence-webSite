@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Residence } from '../residence';
 import { ResidenceService } from '../residence.service';
-import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-residences',

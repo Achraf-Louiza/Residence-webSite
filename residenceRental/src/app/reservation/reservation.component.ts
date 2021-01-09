@@ -3,6 +3,7 @@ import { Residence } from '../residence';
 import { Client } from '../client';
 import { Reservation } from '../reservation'
 import { ResidenceService } from '../residence.service';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-reservation',
@@ -14,7 +15,7 @@ export class ReservationComponent implements OnInit {
   selectedUser: Client;
   reservations: Reservation[];
 
-  constructor(private residenceService: ResidenceService) { }
+  constructor(private residenceService: ResidenceService, private router:Router) { }
 
   ngOnInit(): void {
     this.getUsers();
@@ -36,5 +37,9 @@ export class ReservationComponent implements OnInit {
   backToUsers():void{
   this.selectedUser=null;
   this.reservations=null;
+  }
+
+  goToAR():void{
+   this.router.navigateByUrl("residences");
   }
 }

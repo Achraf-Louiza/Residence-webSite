@@ -1,4 +1,4 @@
-<div class="user">
+<div class="user" *ngIf="users?.length">
   <div class="container" *ngIf="!selectedUser">
   <h1>Current users</h1>
   <h3><i>Choose a user to display his reservations in our residence "THE HOME":</i></h3>
@@ -42,5 +42,11 @@
       </tr>
     </table>
     <button id="back" (click)="backToUsers()">back to users</button>
+  </div>
+</div>
+<div class="user" *ngIf="!users?.length">
+  <div class="container">
+    <h1>No user yet!</h1>
+    <h3><i>Go to <span (click)="goToAR()"><u>available residences</u></span> and reserve the studio that fits you!</i></h3>
   </div>
 </div>
