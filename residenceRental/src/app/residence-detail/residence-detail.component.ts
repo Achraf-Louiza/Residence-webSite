@@ -3,6 +3,7 @@ import { Residence } from '../residence';
 import { Studio } from '../studio';
 import { Client } from '../client' ;
 import { ResidenceService } from '../residence.service';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-residence-detail',
@@ -16,12 +17,13 @@ export class ResidenceDetailComponent implements OnInit {
   submitted = false;
   selectedStudio: Studio;
 
-  constructor(private residenceService: ResidenceService) {
+  constructor(private residenceService: ResidenceService, private router:Router) {
 
    }
 
   ngOnInit(): void {
     this.getStudios();
+    this.submitted = false;
   }
 
   getStudios(): void{
@@ -38,6 +40,15 @@ export class ResidenceDetailComponent implements OnInit {
    this.residenceService.postUser(value).subscribe(vv => {console.log(vv);});
    this.residenceService.postRes(value).subscribe(vv => {console.log(vv);});
    this.toReserve = false;
+   this.submitted = true;
+  }
+
+  goToAR():void{
+    this.router.navigateByUrl("residences");
+  }
+
+  goToR():void{
+  this.router.navigateByUrl("reservation");
   }
 
 

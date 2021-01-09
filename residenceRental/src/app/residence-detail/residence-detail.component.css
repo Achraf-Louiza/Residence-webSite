@@ -168,3 +168,52 @@ td p {
   color:red;
   text-align:center;
 }
+.user {
+  padding: 0;
+	margin: 30px auto;
+
+}
+
+.container {
+
+
+	  display: inline-block;
+  	width: 45%;
+
+  	padding: 40px 20px 40px;
+  	position: relative;
+  	vertical-align: top;
+  	margin: 10px;
+  	font-family: 'helvetica', san-serif;
+  	min-height: 25%;
+  	background: #262a2b;
+  	border: 1px solid #252727;
+  	text-align: left;
+    width: 80%;
+	}
+span{
+cursor: pointer;
+}
+/* visited link */
+span:visited {
+  color: green;
+}
+
+/* mouse over link */
+span:hover {
+  color: hotpink;
+}
+
+/* selected link */
+span:active {
+  color: blue;
+}
+.h1 {
+color: #b7b7b7;
+}
+.h3{
+color:#B0F2B6;
+}
+.clickable{
+cursor:pointer;
+}

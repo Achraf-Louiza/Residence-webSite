@@ -1,5 +1,5 @@
 
-<div class="detail" *ngIf="!toReserve">
+<div class="detail" *ngIf="!toReserve && !submitted">
 
   <img [src]="'../../assets/images/res'+ residence.id+'.jpg'" />
   <h1>{{residence.nom}}</h1>
@@ -29,7 +29,7 @@
   </tr>
 </table>
 </div>
-<div class="res"*ngIf="residence && !toReserve">
+<div class="res"*ngIf="residence && !toReserve && !submitted">
   <table>
     <tr>
       <th>type</th>
@@ -99,7 +99,11 @@
       <button [disabled]= "userForm.form.invalid" type="submit" class="submit-btn">Soummettre</button>
 
     </form>
-
-
-
+</div>
+<div class="user" *ngIf="submitted">
+  <div class="container">
+    <h1 class="h1">Your reservation has been registered successfully!</h1>
+    <h3 class="h3" >To reserve an other studio go to <spin class="clickable"(click)="goToAR()" ><u>Available residences</u></spin></h3>
+    <h3 class="h3" >To view the current reservations go to <spin class="clickable"(click)="goToR()"><u>Reservations</u></spin></h3>
+  </div>
 </div>
